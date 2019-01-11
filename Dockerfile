@@ -1,12 +1,6 @@
-FROM alpine/git as clone 
-WORKDIR /opt/MySysLog
-RUN \
-    git clone https://github.com/rijocv/syslog_v1
-
-
 FROM maven:3.5-jdk-8-alpine as build
 WORKDIR /opt/MySysLog
-COPY --from=clone /opt/MySysLog/syslog_v1  /opt/MySysLog
+COPY . . 
 RUN mvn compile && \
     mvn test && \
     mvn install 
