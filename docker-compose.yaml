@@ -9,19 +9,16 @@ services:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
-    ports: 
-      - 3307:3307
     environment:
-      MYSQL_ROOT_PASSWORD: admin123
-      MYSQL_USER: rijo
-      MYSQL_PASSWORD: rijo123
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: syslog
     networks:
       - syslog-net
 
   syslog:
     build: .
     ports:
-      - 5555:8082
+      - 5555:16001
     networks:
       - syslog-net
     depends_on:

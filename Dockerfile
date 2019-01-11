@@ -11,5 +11,5 @@ WORKDIR /opt/MySysLog
 COPY --from=build /opt/MySysLog /opt/MySysLog 
 EXPOSE 16001
 
-CMD ["java -jar ./target/syslog.jar"]
+CMD java -jar target/syslog.jar 
 
