@@ -25,5 +25,5 @@ services:
     networks:
       - syslog-net
     depends_on:
-      - mysql_db
+      - mysql
 
