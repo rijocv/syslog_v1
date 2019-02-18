@@ -18,7 +18,7 @@ services:
   syslog:
     build: .
     ports:
-      - 34000:16001
+      - 34000:8082
     networks:
       - syslog-net
     depends_on:

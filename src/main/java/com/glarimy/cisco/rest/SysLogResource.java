@@ -23,8 +23,8 @@ public class SysLogResource {
 
 	@RequestMapping(value = "/syslog/{id}", method = RequestMethod.GET)
 	public ResponseEntity<SysLog> find(@PathVariable("id") int id) {
-		SysLog book = null;
-		return new ResponseEntity<SysLog>(book, HttpStatus.OK);
+		SysLog syslog = sysLogCollector.find(id);
+		return new ResponseEntity<SysLog>(syslog, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/syslog", method = RequestMethod.GET)
